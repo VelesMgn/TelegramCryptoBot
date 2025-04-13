@@ -23,6 +23,9 @@ public class User {
     @Column(name = "registered_at", nullable = false)
     private Timestamp registeredAt;
 
-    @Column(name = "price")
-    private Double price;
+    @Column(name = "bitcoin_price")
+    private Double bitcoinPrice;
+
+    @Column(name = "ethereum_price")
+    private Double ethereumPrice;
 }

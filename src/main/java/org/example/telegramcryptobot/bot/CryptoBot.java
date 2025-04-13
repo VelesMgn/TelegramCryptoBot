@@ -13,6 +13,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 @Component
 public class CryptoBot extends TelegramLongPollingBot {
     private final CommandFactory commandFactory;
+
     @Value("${bot.name}")
     private String botName;
 

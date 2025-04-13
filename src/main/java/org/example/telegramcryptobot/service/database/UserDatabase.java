@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.sql.Timestamp;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -22,6 +23,28 @@ public class UserDatabase {
                     .build();
 
             userRepository.save(user);
+        }
+    }
+
+    public void updateBitcoinPrice(Long chatId, Double price) {
+        Optional<User> optionalUser = userRepository.findById(chatId);
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            user.setBitcoinPrice(price);
+            userRepository.save(user);
+        } else {
+            throw new RuntimeException("User not found with chatId = " + chatId);
+        }
+    }
+
+    public void updateEthereumPrice(Long chatId, Double price) {
+        Optional<User> optionalUser = userRepository.findById(chatId);
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            user.setEthereumPrice(price);
+            userRepository.save(user);
+        } else {
+            throw new RuntimeException("User not found with chatId = " + chatId);
         }
     }
 }
