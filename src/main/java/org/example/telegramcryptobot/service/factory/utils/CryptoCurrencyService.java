@@ -1,38 +1,44 @@
-package org.example.telegramcryptobot.service.crypto;
+package org.example.telegramcryptobot.service.factory.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Slf4j
-@Service
-public class BinanceClient {
-    private final HttpGet httpGet;
-    private final ObjectMapper mapper;
+public class CryptoCurrencyService {
+    private final AtomicReference<Double> price = new AtomicReference<>();
     private final HttpClient httpClient;
+    private final ObjectMapper mapper;
+    private final HttpGet httpGet;
 
-    public BinanceClient(@Value("${binance.api.getPrice}") String uri) {
+    public CryptoCurrencyService(String uri) {
         httpGet = new HttpGet(uri);
         mapper = new ObjectMapper();
         httpClient = HttpClientBuilder.create()
                 .setSSLHostnameVerifier(new NoopHostnameVerifier())
                 .build();
     }
-    public double getBitcoinPrice() throws IOException {
-        log.info("Performing client call to binanceApi to get bitcoin price");
+
+    @SneakyThrows
+    public double getPrice() {
+        log.info("Performing client call to Api to get price");
+
         try {
-            return mapper.readTree(EntityUtils.toString(httpClient.execute(httpGet).getEntity()))
+            double bitcoinPrice = mapper.readTree(EntityUtils.toString(httpClient.execute(httpGet).getEntity()))
                     .path("price").asDouble();
+
+            price.set(bitcoinPrice);
+            return price.get();
         } catch (IOException e) {
-            log.error("Error while getting price from binance", e);
+            log.info("Couldn't get the Bitcoin price: {}", e.getMessage());
             throw e;
         }
     }

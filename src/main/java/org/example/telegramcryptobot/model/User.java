@@ -22,4 +22,7 @@ public class User {
 
     @Column(name = "registered_at", nullable = false)
     private Timestamp registeredAt;
+
+    @Column(name = "price")
+    private Double price;
 }

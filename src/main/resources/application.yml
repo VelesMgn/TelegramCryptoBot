@@ -21,4 +21,5 @@ bot:
 
 binance:
   api:
-    getPrice: https://api.binance.com/api/v3/avgPrice?symbol=BTCUSDT
+    getPriceBitcoin: https://api.binance.com/api/v3/avgPrice?symbol=BTCUSDT
+    getPriceEthereum: https://api.binance.com/api/v3/avgPrice?symbol=ETHUSDT

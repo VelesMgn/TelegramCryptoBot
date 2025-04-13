@@ -5,7 +5,8 @@ import lombok.Getter;
 @Getter
 public enum BotCommandType {
     START("/start"),
-    PRICE("/get_price");
+    BITCOIN_PRICE("/get_price_bitcoin"),
+    ETHEREUM_PRICE("/get_price_ethereum");
 
     private final String command;
 
