@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: telegram_bot
+  config:
+    import: classpath:config.yml
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: ${DB_NAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+bot:
+  name: ${BOT_NAME}
+  token: ${BOT_TOKEN}
+
+binance:
+  api:
+    getPrice: https://api.binance.com/api/v3/avgPrice?symbol=BTCUSDT
