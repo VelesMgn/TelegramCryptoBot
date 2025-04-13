@@ -1,21 +1,21 @@
-package org.example.telegram_crypto_bot.service.command.impl;
+package org.example.telegramcryptobot.service.commands.impl;
 
 import com.vdurmont.emoji.EmojiParser;
 import lombok.RequiredArgsConstructor;
-import org.example.telegram_crypto_bot.service.command.Commands;
-import org.example.telegram_crypto_bot.service.database.UserDatabase;
+import org.example.telegramcryptobot.service.commands.BotCommand;
+import org.example.telegramcryptobot.service.database.UserDatabase;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 @Service
 @RequiredArgsConstructor
-public class CommandForStart implements Commands {
+public class StartCommand implements BotCommand {
     private final UserDatabase userDatabase;
     private static final String WELCOME_MESSAGE = EmojiParser.parseToUnicode("""
                 Welcome %s!!! \uD83E\uDD73
                 List of available commands:
-                    /tests: "Take the tests"".
+                    /get_price - get the cost of Bitcoin in USD.
                 """); // https://emojipedia.org/
 
     @Override

@@ -1,4 +1,4 @@
-package org.example.telegram_crypto_bot;
+package org.example.telegramcryptobot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

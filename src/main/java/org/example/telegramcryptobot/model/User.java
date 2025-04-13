@@ -1,4 +1,4 @@
-package org.example.telegram_crypto_bot.model;
+package org.example.telegramcryptobot.model;
 
 import jakarta.persistence.*;
 import lombok.*;

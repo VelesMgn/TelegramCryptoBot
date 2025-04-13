@@ -1,7 +1,7 @@
-package org.example.telegram_crypto_bot.bot;
+package org.example.telegramcryptobot.bot;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.telegram_crypto_bot.service.factory.CommandFactory;
+import org.example.telegramcryptobot.service.factory.CommandFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -11,13 +11,13 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 @Slf4j
 @Component
-public class Bot extends TelegramLongPollingBot {
+public class CryptoBot extends TelegramLongPollingBot {
     private final CommandFactory commandFactory;
     @Value("${bot.name}")
     private String botName;
 
-    public Bot(@Value("${bot.token}") String botToken,
-               CommandFactory commandFactory) {
+    public CryptoBot(@Value("${bot.token}") String botToken,
+                     CommandFactory commandFactory) {
         super(botToken);
         this.commandFactory = commandFactory;
     }

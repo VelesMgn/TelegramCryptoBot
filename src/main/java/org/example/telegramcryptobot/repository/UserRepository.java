@@ -1,6 +1,6 @@
-package org.example.telegram_crypto_bot.repository;
+package org.example.telegramcryptobot.repository;
 
-import org.example.telegram_crypto_bot.model.User;
+import org.example.telegramcryptobot.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

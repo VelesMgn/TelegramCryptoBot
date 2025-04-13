@@ -1,0 +1,16 @@
+package org.example.telegramcryptobot.bot.menu.impl;
+
+import org.example.telegramcryptobot.bot.menu.MenuList;
+import org.example.telegramcryptobot.service.commands.BotCommandType;
+import org.springframework.stereotype.Component;
+import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
+
+import java.util.List;
+
+@Component
+public class MenuListImpl implements MenuList {
+    @Override
+    public List<BotCommand> getMenuList() {
+        return List.of(new BotCommand(BotCommandType.PRICE.getCommand(), "Get the cost of Bitcoin in USD"));
+    }
+}

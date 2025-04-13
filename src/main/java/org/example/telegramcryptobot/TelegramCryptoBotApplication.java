@@ -1,4 +1,4 @@
-package org.example.telegram_crypto_bot;
+package org.example.telegramcryptobot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

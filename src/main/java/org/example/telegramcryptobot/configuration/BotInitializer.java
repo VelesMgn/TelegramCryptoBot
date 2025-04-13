@@ -1,10 +1,10 @@
-package org.example.telegram_crypto_bot.configuration;
+package org.example.telegramcryptobot.configuration;
 
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.telegram_crypto_bot.bot.Bot;
-import org.example.telegram_crypto_bot.bot.menu.MenuList;
+import org.example.telegramcryptobot.bot.CryptoBot;
+import org.example.telegramcryptobot.bot.menu.MenuList;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
@@ -18,7 +18,7 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 @RequiredArgsConstructor
 public class BotInitializer {
     private final MenuList menuList;
-    private final Bot bot;
+    private final CryptoBot bot;
 
     @Bean
     public TelegramBotsApi telegramBotsApi(){

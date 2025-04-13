@@ -1,4 +1,4 @@
-package org.example.telegram_crypto_bot.bot.menu;
+package org.example.telegramcryptobot.bot.menu;
 
 import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
 

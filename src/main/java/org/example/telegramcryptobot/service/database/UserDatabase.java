@@ -1,13 +1,12 @@
-package org.example.telegram_crypto_bot.service.database;
+package org.example.telegramcryptobot.service.database;
 
 import lombok.RequiredArgsConstructor;
-import org.example.telegram_crypto_bot.model.User;
-import org.example.telegram_crypto_bot.repository.UserRepository;
+import org.example.telegramcryptobot.model.User;
+import org.example.telegramcryptobot.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.sql.Timestamp;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
