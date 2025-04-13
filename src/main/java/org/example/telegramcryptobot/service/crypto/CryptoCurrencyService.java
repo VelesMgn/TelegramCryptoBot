@@ -15,13 +15,12 @@ public class CryptoCurrencyService {
     }
 
     public double getBitcoinPrice() {
-        if (price.get() == null) {
-            try {
-                price.set(client.getBitcoinPrice());
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        try {
+            price.set(client.getBitcoinPrice());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
         return price.get();
     }
 }

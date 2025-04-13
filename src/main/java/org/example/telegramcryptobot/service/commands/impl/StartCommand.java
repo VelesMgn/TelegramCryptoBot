@@ -21,9 +21,11 @@ public class StartCommand implements BotCommand {
     @Override
     public SendMessage getMessageResponse(Update update) {
         userDatabase.save(update);
+
         SendMessage message = new SendMessage();
         message.setChatId(update.getMessage().getChatId().toString());
         message.setText(formatWelcomeMessage(update.getMessage().getChat().getUserName()));
+
         return message;
     }
 
