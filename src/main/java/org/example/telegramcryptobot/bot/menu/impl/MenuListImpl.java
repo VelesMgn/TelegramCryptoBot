@@ -18,6 +18,10 @@ public class MenuListImpl implements MenuList {
                 new BotCommand(BotCommandType.BITCOIN_PRICE.getCommand(),
                         "Get the cost of Bitcoin in USD"),
                 new BotCommand(BotCommandType.ETHEREUM_PRICE.getCommand(),
-                        "Get the cost of Ethereum in USD"));
+                        "Get the cost of Ethereum in USD"),
+                new BotCommand(BotCommandType.UNSUBSCRIBE_BITCOIN.getCommand(),
+                        "Delete your Bitcoin subscription"),
+                new BotCommand(BotCommandType.UNSUBSCRIBE_ETHEREUM.getCommand(),
+                        "Delete your Ethereum subscription"));
     }
 }

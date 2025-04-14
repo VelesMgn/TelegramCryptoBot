@@ -23,7 +23,9 @@ public class CommandFactory {
     private final GetPriceBitcoinCommand priceBitcoinCommand;
     private final GetPriceEthereumCommand priceEthereumCommand;
     private final GetSubscriptionCommand getSubscriptionCommand;
+    private final UnsubscribeBitcoinCommand unsubscribeBitcoinCommand;
     private final SubscribeBitcoinPriceCommand subscribeBitcoinCommand;
+    private final UnsubscribeEthereumCommand unsubscribeEthereumCommand;
     private final SubscribeEthereumPriceCommand subscribeEthereumCommand;
 
     @PostConstruct
@@ -33,6 +35,8 @@ public class CommandFactory {
         userCommandsMap.put(BotCommandType.BITCOIN_PRICE.getCommand(), priceBitcoinCommand);
         userCommandsMap.put(BotCommandType.ETHEREUM_PRICE.getCommand(), priceEthereumCommand);
         userCommandsMap.put(BotCommandType.SUBSCRIPTION.getCommand(), getSubscriptionCommand);
+        userCommandsMap.put(BotCommandType.UNSUBSCRIBE_BITCOIN.getCommand(), unsubscribeBitcoinCommand);
+        userCommandsMap.put(BotCommandType.UNSUBSCRIBE_ETHEREUM.getCommand(), unsubscribeEthereumCommand);
     }
 
     public BotCommand getCommand(Update update) {

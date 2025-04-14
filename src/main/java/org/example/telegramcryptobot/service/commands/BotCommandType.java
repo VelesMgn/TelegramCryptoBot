@@ -9,6 +9,8 @@ public enum BotCommandType {
     SUBSCRIPTION("/get_subscription"),
     BITCOIN_PRICE("/get_price_bitcoin"),
     ETHEREUM_PRICE("/get_price_ethereum"),
+    UNSUBSCRIBE_BITCOIN("/unsubscribe_bitcoin"),
+    UNSUBSCRIBE_ETHEREUM("/unsubscribe_ethereum"),
     SUBSCRIBE_BITCOIN_PRICE("/subscribe_bitcoin"),
     SUBSCRIBE_ETHEREUM_PRICE("/subscribe_ethereum"),;
 
