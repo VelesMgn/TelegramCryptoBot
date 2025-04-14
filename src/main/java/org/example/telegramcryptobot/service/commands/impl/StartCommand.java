@@ -17,9 +17,10 @@ public class StartCommand extends AbstractBotCommand {
                     /help - shows all available commands,
                     /get_price_bitcoin - get the cost of Bitcoin in USD,
                     /get_price_ethereum - get the cost of Ethereum in USD,
-                    /subscribe_bitcoin_price [write the required price]
+                    /get_subscription - get current subscriptions,
+                    /subscribe_bitcoin [write the required price]
                      - subscribe to the cost of Bitcoin:
-                    /subscribe_ethereum_price [write the required price]
+                    /subscribe_ethereum [write the required price]
                      - subscribe to the cost of Ethereum:
                 """); // https://emojipedia.org/
 

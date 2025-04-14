@@ -11,11 +11,13 @@ import java.util.List;
 public class MenuListImpl implements MenuList {
     @Override
     public List<BotCommand> getMenuList() {
-        return List.of(new BotCommand(BotCommandType.BITCOIN_PRICE.getCommand(),
+        return List.of(new BotCommand(BotCommandType.HELP.getCommand(),
+                "List of available commands"),
+                new BotCommand(BotCommandType.SUBSCRIPTION.getCommand(),
+                        "Get current subscriptions"),
+                new BotCommand(BotCommandType.BITCOIN_PRICE.getCommand(),
                         "Get the cost of Bitcoin in USD"),
                 new BotCommand(BotCommandType.ETHEREUM_PRICE.getCommand(),
-                        "Get the cost of Ethereum in USD"),
-                new BotCommand(BotCommandType.HELP.getCommand(),
-                        "List of available commands"));
+                        "Get the cost of Ethereum in USD"));
     }
 }

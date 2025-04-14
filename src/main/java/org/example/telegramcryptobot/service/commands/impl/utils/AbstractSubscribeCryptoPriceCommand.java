@@ -9,7 +9,8 @@ import java.math.RoundingMode;
 public abstract class AbstractSubscribeCryptoPriceCommand extends AbstractBotCommand {
     private final static String INCORRECT_USER_REQUEST = """
             The required price is not specified: %s,
-            for example /subscribe_bitcoin_price 20000.
+            for example /subscribe_bitcoin 60000,
+            for example /subscribe_ethereum 1500.
             """;
     private final static String SUCCESSFUL_ATTEMPT_MESSAGE =
             "A new subscription has been created for the price: %s USD";

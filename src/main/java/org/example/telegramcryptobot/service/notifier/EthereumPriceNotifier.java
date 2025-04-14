@@ -13,26 +13,26 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class BitcoinPriceNotifier extends AbstractPriceNotifier {
-    private final static String NOTIFICATION_TEXT = "It's time to buy, the cost of Bitcoin: %s USD";
+public class EthereumPriceNotifier extends AbstractPriceNotifier {
+    private final static String NOTIFICATION_TEXT = "It's time to buy, the cost of Ethereum: %s USD";
     private final UserRepository userRepository;
 
-    @Value("${binance.api.getPriceBitcoin}")
+    @Value("${binance.api.getPriceEthereum}")
     private String uri;
 
     @Override
     protected List<User> getUsers(double currentPrice) {
-        return userRepository.findAllByBitcoinPriceGreaterThan(currentPrice);
+        return userRepository.findAllByEthereumPriceGreaterThan(currentPrice);
     }
 
     @Override
     protected Timestamp getNotificationTime(User user) {
-        return user.getLatestBitcoinPriceNotification();
+        return user.getLatestEthereumPriceNotification();
     }
 
     @Override
     protected void saveUsers(User user, Instant now) {
-        user.setLatestBitcoinPriceNotification(Timestamp.from(now));
+        user.setLatestEthereumPriceNotification(Timestamp.from(now));
         userRepository.save(user);
     }
 

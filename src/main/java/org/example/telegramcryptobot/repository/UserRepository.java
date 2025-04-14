@@ -13,8 +13,14 @@ import java.util.List;
 @Transactional
 public interface UserRepository extends CrudRepository<User, Long> {
     @Query(
-            value = "SELECT * FROM \"user\" WHERE bitcoin_price <= :currentPrice",
+            value = "SELECT * FROM \"user\" WHERE bitcoin_price >= :currentPrice",
             nativeQuery = true
     )
     List<User> findAllByBitcoinPriceGreaterThan(@Param("currentPrice") Double currentPrice);
+
+    @Query(
+            value = "SELECT * FROM \"user\" WHERE ethereum_price >= :currentPrice",
+            nativeQuery = true
+    )
+    List<User> findAllByEthereumPriceGreaterThan(@Param("currentPrice") Double currentPrice);
 }

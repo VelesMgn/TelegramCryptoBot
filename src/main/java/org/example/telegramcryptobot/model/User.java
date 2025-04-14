@@ -20,11 +20,11 @@ public class User {
     @Column(name = "user_name", nullable = false)
     private String userName;
 
-    @Column(name = "registered_at", nullable = false)
-    private Timestamp registeredAt;
+    @Column(name = "bitcoin_notification")
+    private Timestamp latestBitcoinPriceNotification;
 
-    @Column(name = "last_notification_time")
-    private Timestamp lastNotificationTime;
+    @Column(name = "ethereum_notification")
+    private Timestamp latestEthereumPriceNotification;
 
     @Column(name = "bitcoin_price")
     private Double bitcoinPrice;

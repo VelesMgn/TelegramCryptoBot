@@ -6,7 +6,6 @@ import org.example.telegramcryptobot.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-import java.sql.Timestamp;
 import java.util.Optional;
 
 @Service
@@ -19,7 +18,6 @@ public class UserDatabase {
             User user = User.builder()
                     .chatId(update.getMessage().getChatId())
                     .userName(update.getMessage().getChat().getUserName())
-                    .registeredAt(new Timestamp(System.currentTimeMillis()))
                     .build();
 
             userRepository.save(user);

@@ -29,8 +29,6 @@ public class CryptoCurrencyService {
 
     @SneakyThrows
     public double getPrice() {
-        log.info("Performing client call to Api to get price");
-
         try {
             double bitcoinPrice = mapper.readTree(EntityUtils.toString(httpClient.execute(httpGet).getEntity()))
                     .path("price").asDouble();

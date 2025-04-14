@@ -22,6 +22,7 @@ public class CommandFactory {
     private final UnknownCommand unknownCommand;
     private final GetPriceBitcoinCommand priceBitcoinCommand;
     private final GetPriceEthereumCommand priceEthereumCommand;
+    private final GetSubscriptionCommand getSubscriptionCommand;
     private final SubscribeBitcoinPriceCommand subscribeBitcoinCommand;
     private final SubscribeEthereumPriceCommand subscribeEthereumCommand;
 
@@ -31,6 +32,7 @@ public class CommandFactory {
         userCommandsMap.put(BotCommandType.HELP.getCommand(), helpCommand);
         userCommandsMap.put(BotCommandType.BITCOIN_PRICE.getCommand(), priceBitcoinCommand);
         userCommandsMap.put(BotCommandType.ETHEREUM_PRICE.getCommand(), priceEthereumCommand);
+        userCommandsMap.put(BotCommandType.SUBSCRIPTION.getCommand(), getSubscriptionCommand);
     }
 
     public BotCommand getCommand(Update update) {
