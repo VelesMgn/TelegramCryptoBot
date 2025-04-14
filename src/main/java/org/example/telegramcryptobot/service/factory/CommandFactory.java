@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.example.telegramcryptobot.service.commands.BotCommandType;
 import org.example.telegramcryptobot.service.commands.BotCommand;
 import org.example.telegramcryptobot.service.commands.impl.*;
+import org.example.telegramcryptobot.service.commands.impl.SubscribeEthereumPriceCommand;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.objects.Update;
 

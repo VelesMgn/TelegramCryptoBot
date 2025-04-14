@@ -13,12 +13,10 @@ public class HelpCommand extends AbstractBotCommand {
                     /help - shows all available commands,
                     /get_price_bitcoin - get the cost of Bitcoin in USD,
                     /get_price_ethereum - get the cost of Ethereum in USD,
-                    /subscribe_bitcoin_price [write the required price]\s
-                     - subscribe to the cost of Bitcoin:\s
-                     for example "/subscribe_bitcoin_price 20000"
-                    /subscribe_ethereum_price [write the required price]\s
-                     - subscribe to the cost of Ethereum:\s
-                     for example "/subscribe_ethereum_price 1500"
+                    /subscribe_bitcoin_price [write the required price]
+                     - subscribe to the cost of Bitcoin:
+                    /subscribe_ethereum_price [write the required price]
+                     - subscribe to the cost of Ethereum:
                 """);
 
     @Override
