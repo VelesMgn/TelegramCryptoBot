@@ -23,6 +23,9 @@ public class User {
     @Column(name = "registered_at", nullable = false)
     private Timestamp registeredAt;
 
+    @Column(name = "last_notification_time")
+    private Timestamp lastNotificationTime;
+
     @Column(name = "bitcoin_price")
     private Double bitcoinPrice;
 

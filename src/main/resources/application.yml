@@ -18,6 +18,12 @@ spring:
 bot:
   name: ${BOT_NAME}
   token: ${BOT_TOKEN}
+  notify:
+    delay:
+      value: 10
+      unit: MINUTES
+  price-check:
+    interval-ms: 120000
 
 binance:
   api:

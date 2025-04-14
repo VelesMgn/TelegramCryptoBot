@@ -6,7 +6,6 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-
 public abstract class AbstractSubscribeCryptoPriceCommand extends AbstractBotCommand {
     private final static String INCORRECT_USER_REQUEST = """
             The required price is not specified: %s,
