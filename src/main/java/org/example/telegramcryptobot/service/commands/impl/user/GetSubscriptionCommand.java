@@ -1,4 +1,4 @@
-package org.example.telegramcryptobot.service.commands.impl;
+package org.example.telegramcryptobot.service.commands.impl.user;
 
 import lombok.RequiredArgsConstructor;
 import org.example.telegramcryptobot.repository.UserRepository;

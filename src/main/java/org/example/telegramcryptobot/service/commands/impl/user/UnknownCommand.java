@@ -1,4 +1,4 @@
-package org.example.telegramcryptobot.service.commands.impl;
+package org.example.telegramcryptobot.service.commands.impl.user;
 
 import org.example.telegramcryptobot.service.commands.impl.utils.AbstractBotCommand;
 import org.springframework.stereotype.Service;

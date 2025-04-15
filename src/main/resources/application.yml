@@ -25,7 +25,14 @@ bot:
   price-check:
     interval-ms: 120000
 
+admin:
+  id: ${ADMIN_ID}
+
 binance:
   api:
     getPriceBitcoin: https://api.binance.com/api/v3/avgPrice?symbol=BTCUSDT
     getPriceEthereum: https://api.binance.com/api/v3/avgPrice?symbol=ETHUSDT
+
+facts:
+  path: db/facts.json
+  number: 12

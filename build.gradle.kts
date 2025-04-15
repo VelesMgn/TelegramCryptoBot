@@ -24,9 +24,10 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.4.4")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.2")
+    implementation("org.springframework.boot:spring-boot-starter")
+    implementation("com.googlecode.json-simple:json-simple:1.1.1")
     implementation("org.apache.httpcomponents:httpclient:4.5.13")
     implementation("org.telegram:telegrambots:6.9.7.1")
     implementation("org.postgresql:postgresql:42.7.5")

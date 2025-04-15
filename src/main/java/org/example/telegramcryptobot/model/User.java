@@ -11,7 +11,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "`user`")
+@Table(name = "`user`", indexes = @Index(name = "user_index", columnList = "chat_id"))
 public class User {
     @Id
     @Column(name = "chat_id", nullable = false, unique = true)

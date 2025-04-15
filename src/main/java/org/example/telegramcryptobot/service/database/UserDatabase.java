@@ -6,6 +6,7 @@ import org.example.telegramcryptobot.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -44,5 +45,9 @@ public class UserDatabase {
         } else {
             throw new RuntimeException("User not found with chatId = " + chatId);
         }
+    }
+
+    public List<User> getAllUsers() {
+        return (List<User>) userRepository.findAll();
     }
 }

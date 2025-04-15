@@ -1,6 +1,9 @@
 package org.example.telegramcryptobot.bot;
 
 import lombok.extern.slf4j.Slf4j;
+import org.example.telegramcryptobot.service.commands.BotCommand;
+import org.example.telegramcryptobot.service.commands.impl.admin.MessageForAllCommand;
+import org.example.telegramcryptobot.service.commands.impl.user.UnknownCommand;
 import org.example.telegramcryptobot.service.factory.CommandFactory;
 import org.example.telegramcryptobot.service.notifier.BitcoinPriceNotifier;
 import org.example.telegramcryptobot.service.notifier.EthereumPriceNotifier;
@@ -18,6 +21,8 @@ import java.util.function.Supplier;
 @Slf4j
 @Component
 public class CryptoBot extends TelegramLongPollingBot {
+    private final static String ERROR_MESSAGE = "Couldn't send a response: {}";
+
     private final CommandFactory commandFactory;
     private final BitcoinPriceNotifier bitcoinPriceNotifier;
     private final EthereumPriceNotifier ethereumPriceNotifier;
@@ -39,11 +44,20 @@ public class CryptoBot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         try {
             if (update.hasMessage() && update.getMessage().hasText()) {
-                SendMessage response = commandFactory.getCommand(update).getMessageResponse(update);
-                execute(response);
+                BotCommand command = commandFactory.getCommand(update);
+
+                if (command instanceof MessageForAllCommand) {
+                    List<SendMessage> messageForAll = command.getMessageForAll(update);
+                    for (SendMessage message : messageForAll) execute(message);
+                } else {
+                    SendMessage response = command.getMessageResponse(update);
+                    execute(response);
+                }
+
             }
+
         } catch (TelegramApiException e) {
-            log.error("Couldn't send a response: {}", String.valueOf(e));
+            log.error(ERROR_MESSAGE, String.valueOf(e));
             throw new RuntimeException(e);
         }
     }
@@ -57,7 +71,7 @@ public class CryptoBot extends TelegramLongPollingBot {
                 }
             }
         } catch (TelegramApiException e) {
-            log.error("Couldn't send a response: {}", e.getMessage());
+            log.error(ERROR_MESSAGE, e.getMessage());
             throw new RuntimeException(e);
         }
     }

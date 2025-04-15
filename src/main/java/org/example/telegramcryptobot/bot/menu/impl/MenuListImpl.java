@@ -22,6 +22,8 @@ public class MenuListImpl implements MenuList {
                 new BotCommand(BotCommandType.UNSUBSCRIBE_BITCOIN.getCommand(),
                         "Delete your Bitcoin subscription"),
                 new BotCommand(BotCommandType.UNSUBSCRIBE_ETHEREUM.getCommand(),
-                        "Delete your Ethereum subscription"));
+                        "Delete your Ethereum subscription"),
+                new BotCommand(BotCommandType.CONTENT.getCommand(),
+                        "Educational content: news and facts"));
     }
 }

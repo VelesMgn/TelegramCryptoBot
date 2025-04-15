@@ -5,14 +5,19 @@ import lombok.Getter;
 @Getter
 public enum BotCommandType {
     HELP("/help"),
+    NEWS("/news"),
+    FACTS("/facts"),
     START("/start"),
+    CONTENT("/content"),
+    FACT_PARSING("/fact_parse"),
+    SEND_FOR_ALL("/send_message"),
     SUBSCRIPTION("/get_subscription"),
     BITCOIN_PRICE("/get_price_bitcoin"),
     ETHEREUM_PRICE("/get_price_ethereum"),
+    SUBSCRIBE_BITCOIN("/subscribe_bitcoin"),
+    SUBSCRIBE_ETHEREUM("/subscribe_ethereum"),
     UNSUBSCRIBE_BITCOIN("/unsubscribe_bitcoin"),
-    UNSUBSCRIBE_ETHEREUM("/unsubscribe_ethereum"),
-    SUBSCRIBE_BITCOIN_PRICE("/subscribe_bitcoin"),
-    SUBSCRIBE_ETHEREUM_PRICE("/subscribe_ethereum"),;
+    UNSUBSCRIBE_ETHEREUM("/unsubscribe_ethereum");
 
     private final String command;
 

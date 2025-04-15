@@ -1,4 +1,4 @@
-package org.example.telegramcryptobot.service.commands.impl;
+package org.example.telegramcryptobot.service.commands.impl.user;
 
 import com.vdurmont.emoji.EmojiParser;
 import org.example.telegramcryptobot.service.commands.impl.utils.AbstractBotCommand;
@@ -15,9 +15,10 @@ public class HelpCommand extends AbstractBotCommand {
                     /get_price_ethereum - get the cost of Ethereum in USD,
                     /get_subscription - get current subscriptions,
                     /subscribe_bitcoin [write the required price]
-                     - subscribe to the cost of Bitcoin:
+                     - subscribe to the cost of Bitcoin,
                     /subscribe_ethereum [write the required price]
-                     - subscribe to the cost of Ethereum:
+                     - subscribe to the cost of Ethereum,
+                    /content - educational content: news and facts.
                 """);
 
     @Override
