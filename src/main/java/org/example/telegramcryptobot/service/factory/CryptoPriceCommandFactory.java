@@ -1,6 +1,6 @@
 package org.example.telegramcryptobot.service.factory;
 
-import org.example.telegramcryptobot.service.commands.impl.utils.AbstractBotCommand;
+import org.example.telegramcryptobot.service.command.impl.utils.AbstractBotCommand;
 import org.example.telegramcryptobot.service.factory.utils.CryptoCurrencyService;
 import org.example.telegramcryptobot.utils.TextUtil;
 import org.springframework.stereotype.Service;

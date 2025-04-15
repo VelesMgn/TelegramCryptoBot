@@ -1,4 +1,4 @@
-package org.example.telegramcryptobot.service.commands.impl.utils;
+package org.example.telegramcryptobot.service.command.impl.utils;
 
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;

@@ -32,6 +32,7 @@ dependencies {
     implementation("org.telegram:telegrambots:6.9.7.1")
     implementation("org.postgresql:postgresql:42.7.5")
     implementation("com.vdurmont:emoji-java:5.1.1")
+    implementation("com.rometools:rome:2.1.0")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     annotationProcessor("org.projectlombok:lombok")

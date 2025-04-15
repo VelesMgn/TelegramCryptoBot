@@ -1,14 +1,18 @@
-package org.example.telegramcryptobot.service.commands.impl.user;
+package org.example.telegramcryptobot.service.command.impl.user;
 
 import com.vdurmont.emoji.EmojiParser;
-import org.example.telegramcryptobot.service.commands.impl.utils.AbstractBotCommand;
+import lombok.RequiredArgsConstructor;
+import org.example.telegramcryptobot.service.command.impl.utils.AbstractBotCommand;
+import org.example.telegramcryptobot.service.database.UserDatabase;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 @Service
-public class HelpCommand extends AbstractBotCommand {
-    private static final String HELP_MESSAGE = EmojiParser.parseToUnicode("""
+@RequiredArgsConstructor
+public class StartCommand extends AbstractBotCommand {
+    private static final String WELCOME_MESSAGE = EmojiParser.parseToUnicode("""
+                Welcome %s!!! \uD83E\uDD73
                 List of available commands:
                     /help - shows all available commands,
                     /get_price_bitcoin - get the cost of Bitcoin in USD,
@@ -19,13 +23,16 @@ public class HelpCommand extends AbstractBotCommand {
                     /subscribe_ethereum [write the required price]
                      - subscribe to the cost of Ethereum,
                     /content - educational content: news and facts.
-                """);
+                """); // https://emojipedia.org/
+
+    private final UserDatabase userDatabase;
 
     @Override
     public SendMessage getMessageResponse(Update update) {
+        userDatabase.save(update);
 
         String username = update.getMessage().getChat().getUserName();
-        String messageText = String.format(HELP_MESSAGE, username);
+        String messageText = String.format(WELCOME_MESSAGE, username);
 
         return createMessage(update, messageText);
     }

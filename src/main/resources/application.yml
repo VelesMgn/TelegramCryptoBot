@@ -33,6 +33,9 @@ binance:
     getPriceBitcoin: https://api.binance.com/api/v3/avgPrice?symbol=BTCUSDT
     getPriceEthereum: https://api.binance.com/api/v3/avgPrice?symbol=ETHUSDT
 
+rss:
+  feed: https://cointelegraph.com/rss
+
 facts:
   path: db/facts.json
   number: 12

@@ -1,7 +1,7 @@
 package org.example.telegramcryptobot.bot.menu.impl;
 
 import org.example.telegramcryptobot.bot.menu.MenuList;
-import org.example.telegramcryptobot.service.commands.BotCommandType;
+import org.example.telegramcryptobot.service.command.BotCommandType;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
 

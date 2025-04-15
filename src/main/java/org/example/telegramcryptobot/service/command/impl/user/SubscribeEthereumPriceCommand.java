@@ -1,8 +1,8 @@
-package org.example.telegramcryptobot.service.commands.impl.user;
+package org.example.telegramcryptobot.service.command.impl.user;
 
 import lombok.RequiredArgsConstructor;
-import org.example.telegramcryptobot.service.commands.BotCommandType;
-import org.example.telegramcryptobot.service.commands.impl.utils.AbstractSubscribeCryptoPriceCommand;
+import org.example.telegramcryptobot.service.command.BotCommandType;
+import org.example.telegramcryptobot.service.command.impl.utils.AbstractSubscribeCryptoPriceCommand;
 import org.example.telegramcryptobot.service.database.UserDatabase;
 
 import org.springframework.stereotype.Service;

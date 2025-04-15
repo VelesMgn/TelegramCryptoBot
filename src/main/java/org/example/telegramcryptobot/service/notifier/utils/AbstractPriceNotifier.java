@@ -29,7 +29,6 @@ public abstract class AbstractPriceNotifier {
     protected abstract String getNotificationText();
     protected abstract String getUri();
 
-
     public List<SendMessage> getUserNotifications() {
         notificationList = new ArrayList<>();
         double currentPrice = new CryptoCurrencyService(getUri()).getPrice();

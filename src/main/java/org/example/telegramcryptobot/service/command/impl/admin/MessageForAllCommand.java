@@ -1,9 +1,9 @@
-package org.example.telegramcryptobot.service.commands.impl.admin;
+package org.example.telegramcryptobot.service.command.impl.admin;
 
 import com.vdurmont.emoji.EmojiParser;
 import lombok.RequiredArgsConstructor;
-import org.example.telegramcryptobot.service.commands.BotCommandType;
-import org.example.telegramcryptobot.service.commands.impl.utils.AbstractBotCommand;
+import org.example.telegramcryptobot.service.command.BotCommandType;
+import org.example.telegramcryptobot.service.command.impl.utils.AbstractBotCommand;
 import org.example.telegramcryptobot.service.database.UserDatabase;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;

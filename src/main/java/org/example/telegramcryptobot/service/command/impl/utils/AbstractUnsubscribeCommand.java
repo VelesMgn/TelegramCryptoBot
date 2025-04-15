@@ -1,4 +1,4 @@
-package org.example.telegramcryptobot.service.commands.impl.utils;
+package org.example.telegramcryptobot.service.command.impl.utils;
 
 import org.example.telegramcryptobot.model.User;
 import org.example.telegramcryptobot.repository.UserRepository;

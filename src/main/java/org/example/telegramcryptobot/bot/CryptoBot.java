@@ -1,9 +1,8 @@
 package org.example.telegramcryptobot.bot;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.telegramcryptobot.service.commands.BotCommand;
-import org.example.telegramcryptobot.service.commands.impl.admin.MessageForAllCommand;
-import org.example.telegramcryptobot.service.commands.impl.user.UnknownCommand;
+import org.example.telegramcryptobot.service.command.BotCommand;
+import org.example.telegramcryptobot.service.command.impl.admin.MessageForAllCommand;
 import org.example.telegramcryptobot.service.factory.CommandFactory;
 import org.example.telegramcryptobot.service.notifier.BitcoinPriceNotifier;
 import org.example.telegramcryptobot.service.notifier.EthereumPriceNotifier;
@@ -12,6 +11,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
@@ -54,6 +54,10 @@ public class CryptoBot extends TelegramLongPollingBot {
                     execute(response);
                 }
 
+            } else if (update.hasCallbackQuery()) {
+                BotCommand command = commandFactory.getCallback(update);
+                EditMessageText callbackAnswer = command.getCallbackAnswer(update);
+                execute(callbackAnswer);
             }
 
         } catch (TelegramApiException e) {

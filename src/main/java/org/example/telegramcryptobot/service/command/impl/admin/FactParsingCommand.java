@@ -1,9 +1,9 @@
-package org.example.telegramcryptobot.service.commands.impl.admin;
+package org.example.telegramcryptobot.service.command.impl.admin;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.telegramcryptobot.model.Fact;
-import org.example.telegramcryptobot.service.commands.impl.utils.AbstractBotCommand;
+import org.example.telegramcryptobot.service.command.impl.utils.AbstractBotCommand;
 import org.example.telegramcryptobot.service.database.FactsDatabase;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
