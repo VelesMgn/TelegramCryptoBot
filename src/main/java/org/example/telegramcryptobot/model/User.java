@@ -31,4 +31,7 @@ public class User {
 
     @Column(name = "ethereum_price")
     private Double ethereumPrice;
+
+    @Column(name = "fact_number")
+    private Long factNumber;
 }

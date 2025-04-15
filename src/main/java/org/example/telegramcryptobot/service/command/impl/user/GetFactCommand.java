@@ -18,7 +18,9 @@ public class GetFactCommand extends AbstractBotCommand {
 
     @Override
     public SendMessage getMessageResponse(Update update) {
-        SendMessage message = createMessage(update, getFactText());
+        Long chatId = update.getMessage().getChatId();
+
+        SendMessage message = createMessage(update, getFactText(chatId));
         message.setReplyMarkup(getInlineKeyboardMarkup());
 
         return message;
@@ -33,7 +35,7 @@ public class GetFactCommand extends AbstractBotCommand {
         EditMessageText editMessageText = createEditMessageText(chatId, messageId);
 
         if(callBackData.equals(BotCommandType.YES.getCommand())) {
-            editMessageText.setText(getFactText());
+            editMessageText.setText(getFactText(chatId));
             editMessageText.setReplyMarkup(getInlineKeyboardMarkup());
         } else {
             editMessageText.setText("We will be waiting for you for new facts!");
@@ -58,8 +60,8 @@ public class GetFactCommand extends AbstractBotCommand {
         return button.getInlineKeyboardMarkup();
     }
 
-    private String getFactText() {
-        String fact = database.getFact();
+    private String getFactText(Long chatId) {
+        String fact = database.getFact(chatId);
         return String.format("%s\n\nDo you want to know more facts?", fact);
     }
 }

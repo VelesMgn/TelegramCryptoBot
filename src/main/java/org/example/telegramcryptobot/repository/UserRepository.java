@@ -23,4 +23,6 @@ public interface UserRepository extends CrudRepository<User, Long> {
             nativeQuery = true
     )
     List<User> findAllByEthereumPriceGreaterThan(@Param("currentPrice") Double currentPrice);
+
+    User getUsersByChatId(Long chatId);
 }
